@@ -34,21 +34,21 @@
 </head>
 <body>
 
-<h1>Universal Theme Service (UTS)</h1>
+<h1>Universal Theme Service API</h1>
 <p>
-A plug-and-play theme engine that allows any web application to dynamically change UI themes using a hosted API and a lightweight JavaScript widget.
+A plug-and-play theme plug-in that allows any web application to dynamically change UI themes using a hosted API and a lightweight JS widget.
 </p>
 
 <hr>
 
-<h2>🔹 What This API Does</h2>
+<h2>🔹 What This API Do?</h2>
 
 <ul>
-    <li>Provides dynamic UI themes via REST API</li>
+    <li>Provides dynamic UI themes via API</li>
     <li>Allows users to switch themes from a floating widget</li>
-    <li>Supports random theme selection</li>
+    <li>Supports custom theme selection</li>
     <li>Allows custom positioning of the widget</li>
-    <li>Works with any HTML/CSS based web app</li>
+    <li>Works with any HTML/CSS based web-app</li>
 </ul>
 
 <hr>
@@ -57,19 +57,20 @@ A plug-and-play theme engine that allows any web application to dynamically chan
 
 <h3>Step 1 – Add the Theme Widget Script</h3>
 
-Add this script before closing <code>&lt;/body&gt;</code>:
+In your base.html or any html page that you'd want, Add this script before closing <code>&lt;/body&gt;</code>:
 
 <pre>
 &lt;script src="https://anuragktech.me/themes-widget/themes-widget.js"&gt;&lt;/script&gt;
 </pre>
 
-That’s it. The theme switcher will automatically appear.
+That’s it! The theme switcher will automatically appear.
 
 <hr>
 
 <h3>Step 2 – (Optional) Configure Widget Position</h3>
 
 If you want to change the widget position:
+ADD below snippet before the widget JS. you may configure it as you wish.
 
 <pre>
 &lt;script&gt;
@@ -167,17 +168,6 @@ To allow full theme control:
     <li>AWS Elastic Beanstalk (hosting)</li>
     <li>Amazon API Gateway (public endpoint)</li>
     <li>GitHub Pages (widget hosting)</li>
-</ul>
-
-<hr>
-
-<h2>🔹 Future Roadmap</h2>
-
-<ul>
-    <li>Theme persistence (local storage)</li>
-    <li>User-specific themes</li>
-    <li>Dark mode auto detection</li>
-    <li>Theme marketplace</li>
 </ul>
 
 <hr>
