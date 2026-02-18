@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme API Documentation</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 4px 6px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Theme API Documentation</h1>
+
+<h2>Base URL</h2>
+<code>https://z1s4ahgav3.execute-api.us-east-1.amazonaws.com/prod/themes/</code>
+
+<h2>Endpoint</h2>
+<p><strong>GET /themes/{category}</strong></p>
+
+<h3>Example Request</h3>
+<pre>
+GET /themes/beach
+</pre>
+
+<h3>Example Response</h3>
+<pre>
+{
+  "background": "#00c6ff",
+  "text": "#ffffff"
+}
+</pre>
+
+<h2>Available Categories</h2>
+<ul>
+    <li>beach</li>
+    <li>city</li>
+    <li>night</li>
+    <li>mountain</li>
+    <li>lava</li>
+    <li>grass</li>
+</ul>
+
+</body>
+</html>
