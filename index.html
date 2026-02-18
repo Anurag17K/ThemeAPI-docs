@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Theme API Documentation</title>
+    <title>Universal Theme Service (UTS) – Documentation</title>
     <meta charset="UTF-8">
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             line-height: 1.6;
         }
-        h1, h2 {
-            color: #333;
+        h1, h2, h3 {
+            color: #222;
         }
         code {
             background: #f4f4f4;
@@ -20,44 +20,173 @@
         }
         pre {
             background: #f4f4f4;
-            padding: 10px;
+            padding: 15px;
             border-radius: 6px;
             overflow-x: auto;
+        }
+        .box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #0077ff;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
 
-<h1>Theme API Documentation</h1>
+<h1>Universal Theme Service (UTS)</h1>
+<p>
+A plug-and-play theme engine that allows any web application to dynamically change UI themes using a hosted API and a lightweight JavaScript widget.
+</p>
 
-<h2>Base URL</h2>
-<code>https://z1s4ahgav3.execute-api.us-east-1.amazonaws.com/prod/themes/</code>
+<hr>
 
-<h2>Endpoint</h2>
-<p><strong>GET /themes/{category}</strong></p>
+<h2>🔹 What This API Does</h2>
+
+<ul>
+    <li>Provides dynamic UI themes via REST API</li>
+    <li>Allows users to switch themes from a floating widget</li>
+    <li>Supports random theme selection</li>
+    <li>Allows custom positioning of the widget</li>
+    <li>Works with any HTML/CSS based web app</li>
+</ul>
+
+<hr>
+
+<h2>🔹 How To Integrate Into Your Web App</h2>
+
+<h3>Step 1 – Add the Theme Widget Script</h3>
+
+Add this script before closing <code>&lt;/body&gt;</code>:
+
+<pre>
+&lt;script src="https://anuragktech.me/themes-widget/themes-widget.js"&gt;&lt;/script&gt;
+</pre>
+
+That’s it. The theme switcher will automatically appear.
+
+<hr>
+
+<h3>Step 2 – (Optional) Configure Widget Position</h3>
+
+If you want to change the widget position:
+
+<pre>
+&lt;script&gt;
+window.UTS_CONFIG = {
+    bottom: "30px",
+    left: "25px"
+};
+&lt;/script&gt;
+
+&lt;script src="https://anuragktech.me/themes-widget/themes-widget.js"&gt;&lt;/script&gt;
+</pre>
+
+Available positioning options:
+
+<ul>
+    <li><code>top</code></li>
+    <li><code>bottom</code></li>
+    <li><code>left</code></li>
+    <li><code>right</code></li>
+</ul>
+
+<hr>
+
+<h2>🔹 Available Themes</h2>
+
+Currently supported themes:
+
+<ul>
+    <li>Beach</li>
+    <li>City</li>
+    <li>Night</li>
+    <li>Mountain</li>
+    <li>Lava</li>
+    <li>Grass</li>
+</ul>
+
+More themes will be added over time.
+
+<hr>
+
+<h2>🔹 API Endpoint</h2>
+
+<h3>Base URL</h3>
+
+<pre>
+https://z1s4ahgav3.execute-api.us-east-1.amazonaws.com/prod/themes/{theme_name}
+</pre>
 
 <h3>Example Request</h3>
+
 <pre>
-GET /themes/beach
+GET /themes/lava
 </pre>
 
 <h3>Example Response</h3>
+
 <pre>
 {
-  "background": "#00c6ff",
-  "text": "#ffffff"
+  "background": "#ff4b2b",
+  "text": "#ffffff",
+  "card": "#ff9068"
 }
 </pre>
 
-<h2>Available Categories</h2>
+<hr>
+
+<h2>🔹 How It Works (Architecture)</h2>
+
+<div class="box">
+1. User clicks theme button<br>
+2. Widget calls Theme API<br>
+3. API returns color configuration<br>
+4. Widget dynamically updates CSS variables<br>
+5. Web app instantly changes theme
+</div>
+
+<hr>
+
+<h2>🔹 What Developers Need To Ensure</h2>
+
+To allow full theme control:
+
 <ul>
-    <li>beach</li>
-    <li>city</li>
-    <li>night</li>
-    <li>mountain</li>
-    <li>lava</li>
-    <li>grass</li>
+    <li>Use standard HTML structure</li>
+    <li>Avoid hardcoded background colors in CSS</li>
+    <li>Allow body and card styling via JavaScript</li>
 </ul>
+
+<hr>
+
+<h2>🔹 Deployment Stack</h2>
+
+<ul>
+    <li>Django Backend (ThemeAPI)</li>
+    <li>AWS Elastic Beanstalk (hosting)</li>
+    <li>Amazon API Gateway (public endpoint)</li>
+    <li>GitHub Pages (widget hosting)</li>
+</ul>
+
+<hr>
+
+<h2>🔹 Future Roadmap</h2>
+
+<ul>
+    <li>Theme persistence (local storage)</li>
+    <li>User-specific themes</li>
+    <li>Dark mode auto detection</li>
+    <li>Theme marketplace</li>
+</ul>
+
+<hr>
+
+<h2>Contact</h2>
+
+<p>
+For integration help or feature requests, contact the developer.
+</p>
 
 </body>
 </html>
